@@ -4,7 +4,7 @@ import { devtools, persist } from "zustand/middleware";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-const url=import.meta.env.VITE_BACKEND_URL
+
 const shopStore = (set, get) => ({
    
     currency: "Rs.",
@@ -122,7 +122,7 @@ const shopStore = (set, get) => ({
 
     getProductsData: async () => {
         try {
-            const response = await axios.get(`${url}/api/product/list"`);
+            const response = await axios.get(`https://fashionnepalbackend.onrender.com/api/product/list`);
             if (response.data.success){
                 set({ products: response.data.products });
             } else {
