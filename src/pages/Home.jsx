@@ -11,8 +11,10 @@ import useShopStore from '../store/shopStore'
 
 const Home = () => {
   const getProductsData = useShopStore((state) => state.getProductsData);
+  const url=import.meta.env.VITE_BACKEND_URL
     useEffect(() => {
         getProductsData(); 
+        console.log(url)
     }, [getProductsData]);
     
   return (

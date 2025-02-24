@@ -4,9 +4,9 @@ import useShopStore from '../store/shopStore'
 
 const Esewa = () => {
     const {token } = useShopStore();
-
+    const url=import.meta.env.VITE_BACKEND_URL
     const handleSubmit = async ()=>{
-        const response = await axios.post("http://localhost:3000/api/order/place-esewa",{
+        const response = await axios.post(  `${url}/api/order/place-esewa`,{
             price: 2000
         },{headers:{token}});
         console.log(response.data);
